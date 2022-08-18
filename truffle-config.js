@@ -28,6 +28,9 @@ require('dotenv').config({path: path.join(__dirname, '.env')});
 let testnetPrivateKey=process.env.MUMBAI_PRIVKEY;
 let testnetRpcEndpoint= process.env.MUMBAI_RPC_ENDPOINT;
 
+let mainnetPrivateKey=process.env.MAINNET_PRIVKEY;
+let mainnetRpcEndpoint= process.env.MAINNET_RPC_ENDPOINT;
+
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -60,6 +63,16 @@ module.exports = {
           timeoutBlocks: 50,  // # of blocks before a deployment times out  (minimum/default: 50)
           skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
       },
+      mainnet: {
+          provider: () => new HDWalletProvider(mainnetPrivateKey, mainnetRpcEndpoint),
+          network_id: 1,
+          gas: 6000000, // CHECK
+          gasPrice: 60000000000, // CHECK
+          confirmations: 2,    // # of confs to wait between deployments. (default: 0)
+          timeoutBlocks: 50,  // # of blocks before a deployment times out  (minimum/default: 50)
+          skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+      },
+
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port

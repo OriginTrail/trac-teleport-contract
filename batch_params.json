@@ -1,0 +1,123 @@
+{
+  "1": {
+    "MIN_THRESHOLD": "1",
+    "MAX_THRESHOLD": "10",
+    "BOARDING_PERIOD_LENGTH": "20",
+    "LOCK_PERIOD_LENGTH": "205",
+    "BRIDGE_PERIOD_LENGTH": "365",
+    "startTime": "1660834200"
+  },
+  "2": {
+    "MIN_THRESHOLD": "1",
+    "MAX_THRESHOLD": "10",
+    "BOARDING_PERIOD_LENGTH": "13",
+    "LOCK_PERIOD_LENGTH": "191",
+    "BRIDGE_PERIOD_LENGTH": "365",
+    "startTime": "1662649200"
+  },
+  "3": {
+    "MIN_THRESHOLD": "1",
+    "MAX_THRESHOLD": "10",
+    "BOARDING_PERIOD_LENGTH": "13",
+    "LOCK_PERIOD_LENGTH": "177",
+    "BRIDGE_PERIOD_LENGTH": "365",
+    "startTime": "1663858800"
+  },
+  "4": {
+    "MIN_THRESHOLD": "1",
+    "MAX_THRESHOLD": "10",
+    "BOARDING_PERIOD_LENGTH": "13",
+    "LOCK_PERIOD_LENGTH": "163",
+    "BRIDGE_PERIOD_LENGTH": "365",
+    "startTime": "1665068400"
+  },
+  "5": {
+    "MIN_THRESHOLD": "1",
+    "MAX_THRESHOLD": "10",
+    "BOARDING_PERIOD_LENGTH": "13",
+    "LOCK_PERIOD_LENGTH": "149",
+    "BRIDGE_PERIOD_LENGTH": "365",
+    "startTime": "1666278000"
+  },
+  "6": {
+    "MIN_THRESHOLD": "1",
+    "MAX_THRESHOLD": "5",
+    "BOARDING_PERIOD_LENGTH": "13",
+    "LOCK_PERIOD_LENGTH": "135",
+    "BRIDGE_PERIOD_LENGTH": "365",
+    "startTime": "1667491200"
+  },
+  "7": {
+    "MIN_THRESHOLD": "1",
+    "MAX_THRESHOLD": "5",
+    "BOARDING_PERIOD_LENGTH": "13",
+    "LOCK_PERIOD_LENGTH": "121",
+    "BRIDGE_PERIOD_LENGTH": "365",
+    "startTime": "1668700800"
+  },
+  "8": {
+    "MIN_THRESHOLD": "1",
+    "MAX_THRESHOLD": "5",
+    "BOARDING_PERIOD_LENGTH": "13",
+    "LOCK_PERIOD_LENGTH": "107",
+    "BRIDGE_PERIOD_LENGTH": "365",
+    "startTime": "1669910400"
+  },
+  "9": {
+    "MIN_THRESHOLD": "1",
+    "MAX_THRESHOLD": "5",
+    "BOARDING_PERIOD_LENGTH": "13",
+    "LOCK_PERIOD_LENGTH": "93",
+    "BRIDGE_PERIOD_LENGTH": "365",
+    "startTime": "1671120000"
+  },
+  "10": {
+    "MIN_THRESHOLD": "1",
+    "MAX_THRESHOLD": "5",
+    "BOARDING_PERIOD_LENGTH": "13",
+    "LOCK_PERIOD_LENGTH": "79",
+    "BRIDGE_PERIOD_LENGTH": "365",
+    "startTime": "1672329600"
+  },
+  "11": {
+    "MIN_THRESHOLD": "1",
+    "MAX_THRESHOLD": "5",
+    "BOARDING_PERIOD_LENGTH": "13",
+    "LOCK_PERIOD_LENGTH": "65",
+    "BRIDGE_PERIOD_LENGTH": "365",
+    "startTime": "1673539200"
+  },
+  "12": {
+    "MIN_THRESHOLD": "1",
+    "MAX_THRESHOLD": "5",
+    "BOARDING_PERIOD_LENGTH": "13",
+    "LOCK_PERIOD_LENGTH": "51",
+    "BRIDGE_PERIOD_LENGTH": "365",
+    "startTime": "1674748800"
+  },
+  "13": {
+    "MIN_THRESHOLD": "1",
+    "MAX_THRESHOLD": "5",
+    "BOARDING_PERIOD_LENGTH": "13",
+    "LOCK_PERIOD_LENGTH": "37",
+    "BRIDGE_PERIOD_LENGTH": "365",
+    "startTime": "1675958400"
+  },
+  "14": {
+    "MIN_THRESHOLD": "1",
+    "MAX_THRESHOLD": "5",
+    "BOARDING_PERIOD_LENGTH": "13",
+    "LOCK_PERIOD_LENGTH": "23",
+    "BRIDGE_PERIOD_LENGTH": "365",
+    "startTime": "1677168000"
+  },
+  "15": {
+    "MIN_THRESHOLD": "1",
+    "MAX_THRESHOLD": "5",
+    "BOARDING_PERIOD_LENGTH": "13",
+    "LOCK_PERIOD_LENGTH": "9",
+    "BRIDGE_PERIOD_LENGTH": "365",
+    "startTime": "1678377600"
+  }
+}
+

@@ -1,3 +1,4 @@
+const fs = require('fs');
 const assert = require('assert');
 const chai = require('chai');
 chai.use(require('chai-bignumber')());
@@ -16,16 +17,23 @@ const e18 = new web3.utils.toBN('1000000000000000000');
 const million = new web3.utils.toBN('1000000').mul(e18);
 const ETHER = e18;
 
-const MIN_THRESHOLD = web3.utils.toBN('20').mul(million); //
-const MAX_THRESHOLD = web3.utils.toBN('100').mul(million); //
+
+let testParams = JSON.parse(fs.readFileSync('batch_params.json'));
+
+// DEFINE BATCH OF TESTING FIRST
+let BATCH=1;
+
+const MIN_THRESHOLD = web3.utils.toBN(testParams[BATCH].MIN_THRESHOLD).mul(e18); //
+const MAX_THRESHOLD = web3.utils.toBN(testParams[BATCH].MAX_THRESHOLD).mul(million); //
 
 let owner;
 let stakingContract;
 let token;
 let dayInSeconds = 86400;
-let BOARDING_PERIOD_LENGTH = 30 * dayInSeconds;
-let LOCK_PERIOD_LENGTH = 180 * dayInSeconds;
-let BRIDGE_PERIOD_LENGTH = 180 * dayInSeconds;
+let BOARDING_PERIOD_LENGTH = testParams[BATCH].BOARDING_PERIOD_LENGTH * dayInSeconds;
+let LOCK_PERIOD_LENGTH = testParams[BATCH].LOCK_PERIOD_LENGTH * dayInSeconds;
+let BRIDGE_PERIOD_LENGTH = testParams[BATCH].BRIDGE_PERIOD_LENGTH * dayInSeconds;
+
 
 beforeEach(async () => {
 
@@ -156,15 +164,11 @@ contract('TRACTeleport', async function(accounts) {
 			});
 
 			it('Cannot deposit tokens after boarding period has expired', async function() {
-
-				await timeMachine.advanceTime(BOARDING_PERIOD_LENGTH);
-
 				let sendTokensToAccount4 = await token.transfer(accounts[4],2000, {from: accounts[0]});
 				let approve = await token.approve(stakingContract.address, 2000, {from: accounts[4]});
 				assert.equal(await token.balanceOf( accounts[4]), 2000);
 				await truffleAssert.reverts(
 					stakingContract.depositTokens(2000, {from: accounts[4]}));
-
 			});
 
 		});
@@ -307,6 +311,7 @@ contract('TRACTeleport', async function(accounts) {
 		it('Contract manager cannot transfer funds before bridge launch window', async function(){
 
 			await timeMachine.advanceTime(BOARDING_PERIOD_LENGTH);
+
 			const custodian = await MultiSig.new([accounts[0], accounts[1]], { from: accounts[0] });
 			await truffleAssert.reverts( stakingContract.transferTokens(custodian.address ,{from : accounts[0]}) );
 

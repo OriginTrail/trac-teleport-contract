@@ -5,8 +5,11 @@ import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 import "openzeppelin-solidity/contracts/access/Ownable.sol";
 import "./mocks/IBridgeCustodian.sol";
 
+// ------------------------------------------------------
+// NOTE: All edits from StarfleetStake (original audited smart contract) indicated with comments starting with "EDIT from StarfleetStake"
+// ------------------------------------------------------
 
-// EDIT from StarfleetStake: Changed name of contract to TRACTeleport
+// EDIT from StarfleetStake: Changed the name of the contract to TRACTeleport
 contract TRACTeleport is Ownable {
 
     using SafeMath for uint256;
@@ -14,28 +17,29 @@ contract TRACTeleport is Ownable {
 
     address public constant TRAC_TOKEN_ADDRESS = 0xaA7a9CA87d3694B5755f213B5D04094b8d0F0A6F;
 
-    // EDIT from StarfleetStake: added constant BATCH for convenience
-
+    // EDIT from StarfleetStake: added constant BATCH for convenience (as there will be 15 identical contracts, this constant is used to identify which contract is designated for which batch
     uint256 public constant BATCH = 1;
+
     // minimum number of tokens for successful onboarding
-    // EDIT from StarfleetStake: changed MIN_THRESHOLD constant from 2e25 to 1e18 (for all batches)
+    // EDIT from StarfleetStake: changed MIN_THRESHOLD constant from 2e25 to 1e18 = 1 TRAC (for all batches)
     uint256 public constant MIN_THRESHOLD = 1e18;
 
     // maximum number of tokens allowed to be onboarded
-    // EDIT from StarfleetStake: changed MIN_THRESHOLD constant from 10e25 to 1e25 (changing per batch)
+    // EDIT from StarfleetStake: changed MIN_THRESHOLD constant from 10e25 to 1e25 = 10MM for batch 1 (changing per batch) , as per OT-RFC-12
     uint256 public constant MAX_THRESHOLD = 1e25;
 
     // Time periods
 
     // Official start time of the staking period
     uint256 public t_zero;
-    // EDIT from StarfleetStake: changed BOARDING_PERIOD_LENGTH constant from `30 days` to `21 days` (changing per batch), as per OT-RFC-12
-    uint256 public constant BOARDING_PERIOD_LENGTH = 21 days;
+    // EDIT from StarfleetStake: changed BOARDING_PERIOD_LENGTH constant from `30 days` to `20 days` for batch 1 (changing per batch)
+    uint256 public constant BOARDING_PERIOD_LENGTH = 20 days;
 
-    // TODO EDIT from StarfleetStake: changed LOCK_PERIOD_LENGTH constant from `180 days` to `XX days` (changing per batch), as per OT-RFC-12
-    uint256 public constant LOCK_PERIOD_LENGTH = 10 days;
+    // EDIT from StarfleetStake: changed LOCK_PERIOD_LENGTH constant from `180 days` to `205 days` for batch 1 (changing per batch), as per OT-RFC-12
+    uint256 public constant LOCK_PERIOD_LENGTH = 205 days;
     // EDIT from StarfleetStake: changed BRIDGE_PERIOD_LENGTH constant from `180 days` to `365 days` as per OT-RFC-12
     uint256 public constant BRIDGE_PERIOD_LENGTH = 365 days;
+    // EDIT from StarfleetStake: No changes below this line (no functionality changed)
     uint256 public boarding_period_end;
     uint256 public lock_period_end;
     uint256 public bridge_period_end;

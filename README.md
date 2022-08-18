@@ -1,3 +1,9 @@
+# TRAC Teleport contracts
+
+This repository contains smart contracts for TRAC teleporting as deployed on the https://teleport.origintrail.io
+For more details check out OT-RFC-12, available [here](https://github.com/OriginTrail/OT-RFC-repository/blob/main/RFCs/OT-RFC-12%20OriginTrail%20Parachain%20TRAC%20bridges%20(v2).pdf)
+
+
 ## Install
 
 ```
@@ -29,6 +35,22 @@ npm run deploy-mumbai
 ```
 
 
-### Deploying to mainnet
+### Deploying to Ethereum mainnet
 
-Coming soon
+```shell
+npm run deploy-mainnet
+```
+
+
+### Useful links
+
+
+[OriginTrail website](https://origintrail.io)
+
+[OriginTrail documentation page](http://docs.origintrail.io)
+
+[OriginTrail Discord Group](https://discordapp.com/invite/FCgYk2S)
+
+[OriginTrail Telegram Group](https://t.me/origintrail)
+
+[OriginTrail Twitter](https://twitter.com/origin_trail)
