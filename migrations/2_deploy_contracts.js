@@ -3,7 +3,7 @@ require('dotenv').config({path: path.join(__dirname, '../.env')});
 const fs = require('fs');
 
 
-const TRACTeleport = artifacts.require("TRACTeleport");
+const TRACTeleport = artifacts.require("TRACTeleport_batch2");
 const TestTraceToken = artifacts.require("TestTraceToken");
 
 module.exports = async function (deployer, network, accounts) {
